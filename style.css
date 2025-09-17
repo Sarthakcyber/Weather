@@ -1,0 +1,114 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(-45deg, #2193b0, #6dd5ed, #ff9800, #f44336);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.weather-app {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+  width: 320px;
+  backdrop-filter: blur(10px);
+  z-index: 10;
+  position: relative;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+input {
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  width: 70%;
+  outline: none;
+  font-size: 14px;
+}
+
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 10px;
+  background: #ff9800;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 5px;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #e68900;
+}
+
+.result {
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+.temp {
+  font-size: 40px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.icon {
+  margin: 10px 0;
+}
+
+/* Weather Animations */
+.raindrop {
+  position: absolute;
+  width: 2px;
+  height: 15px;
+  background: rgba(255,255,255,0.8);
+  bottom: 100%;
+  animation: rainFall linear infinite;
+}
+@keyframes rainFall {
+  to {
+    transform: translateY(110vh);
+  }
+}
+
+.snowflake {
+  position: absolute;
+  color: white;
+  font-size: 18px;
+  animation: snowFall linear infinite;
+}
+@keyframes snowFall {
+  to {
+    transform: translateY(110vh) rotate(360deg);
+  }
+}
+
+.cloud {
+  position: absolute;
+  background: rgba(255,255,255,0.7);
+  border-radius: 50%;
+  animation: cloudMove linear infinite;
+}
+@keyframes cloudMove {
+  0% { left: -200px; }
+  100% { left: 120vw; }
+}
